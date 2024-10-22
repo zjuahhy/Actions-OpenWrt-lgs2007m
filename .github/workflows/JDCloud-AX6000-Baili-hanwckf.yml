@@ -150,7 +150,7 @@ jobs:
         cd openwrt
         if [ ${{ github.event.inputs.WIFI_DRIVER }} == 'v7.6.6.1' ]; then
                 sed -i 's/CONFIG_MTK_MT_WIFI_DRIVER_VERSION_7672=y/CONFIG_MTK_MT_WIFI_DRIVER_VERSION_7661=y/g' .config
-                sed -i '$i\CONFIG_MTK_MT_WIFI_MT7986_20230421=y' .config
+                echo 'CONFIG_MTK_MT_WIFI_MT7986_20230808=y' >> .config
                 echo "Use WiFi Driver: v7.6.6.1"
         else
                 echo "Use WiFi Driver: v7.6.7.2"
